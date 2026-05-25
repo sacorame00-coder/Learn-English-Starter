@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدرس 1: التحيات والتعريف - Learn English Academy</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <nav class="lesson-nav">
+            <a href="../../dashboard.html" class="back-btn">← العودة للدروس</a>
+            <div class="lesson-progress">
+                <div class="progress-bar"><div class="progress-fill" style="width: 33%"></div></div>
+                <span>33% اكتمل</span>
+            </div>
+        </nav>
+
+        <div class="lesson-content">
+            <header class="lesson-header">
+                <h1>🗣️ الدرس الأول: التحيات والتعريف</h1>
+                <p>Greetings & Self Introduction</p>
+            </header>
+
+            <!-- Video Section -->
+            <section class="lesson-section">
+                <h2>📹 الفيديو التعليمي</h2>
+                <div class="video-container">
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <!-- Vocabulary Section -->
+            <section class="lesson-section">
+                <h2>📚 المفردات الأساسية</h2>
+                <div class="vocabulary-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-en">Hello</div>
+                        <div class="vocab-ar">مرحباً</div>
+                        <div class="vocab-audio">🔊</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-en">Hi</div>
+                        <div class="vocab-ar">أهلاً</div>
+                        <div class="vocab-audio">🔊</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-en">Good morning</div>
+                        <div class="vocab-ar">صباح الخير</div>
+                        <div class="vocab-audio">🔊</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-en">Good afternoon</div>
+                        <div class="vocab-ar">مساء الخير</div>
+                        <div class="vocab-audio">🔊</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-en">How are you?</div>
+                        <div class="vocab-ar">كيف حالك؟</div>
+                        <div class="vocab-audio">🔊</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-en">My name is...</div>
+                        <div class="vocab-ar">اسمي هو...</div>
+                        <div class="vocab-audio">🔊</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dialogue Section -->
+            <section class="lesson-section">
+                <h2>💬 محادثة تفاعلية</h2>
+                <div class="dialogue-box">
+                    <div class="dialogue-item speaker1">
+                        <div class="speaker-name">Person A</div>
+                        <div class="dialogue-text">Hello! How are you?</div>
+                        <div class="dialogue-ar">مرحباً! كيف حالك؟</div>
+                        <button class="play-audio">🔊 استمع</button>
+                    </div>
+                    <div class="dialogue-item speaker2">
+                        <div class="speaker-name">Person B</div>
+                        <div class="dialogue-text">I'm fine, thank you. And you?</div>
+                        <div class="dialogue-ar">أنا بخير شكراً. وأنت؟</div>
+                        <button class="play-audio">🔊 استمع</button>
+                    </div>
+                    <div class="dialogue-item speaker1">
+                        <div class="speaker-name">Person A</div>
+                        <div class="dialogue-text">Great! My name is Ahmed.</div>
+                        <div class="dialogue-ar">رائع! اسمي أحمد.</div>
+                        <button class="play-audio">🔊 استمع</button>
+                    </div>
+                    <div class="dialogue-item speaker2">
+                        <div class="speaker-name">Person B</div>
+                        <div class="dialogue-text">Nice to meet you! I'm John.</div>
+                        <div class="dialogue-ar">سعيد بمقابلتك! أنا جون.</div>
+                        <button class="play-audio">🔊 استمع</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Chat Section -->
+            <section class="lesson-section">
+                <h2>🤖 محادثة مع الذكاء الاصطناعي</h2>
+                <div class="ai-chat-box">
+                    <div class="chat-message ai-message">
+                        <p>Hello! I'm your English learning assistant. Try greeting me in English!</p>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chatInput" placeholder="اكتب ردك هنا..." class="chat-input">
+                        <button class="btn btn-primary" onclick="sendMessage()">إرسال</button>
+                    </div>
+                    <div id="chatResponses" class="chat-responses"></div>
+                </div>
+            </section>
+
+            <!-- Quiz Section -->
+            <section class="lesson-section">
+                <h2>✏️ اختبر معلوماتك</h2>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>السؤال 1: ما معنى "Good morning"؟</h4>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1"> صباح الخير</label>
+                            <label><input type="radio" name="q1"> مساء الخير</label>
+                            <label><input type="radio" name="q1"> تصبح على خير</label>
+                            <label><input type="radio" name="q1"> مرحبا</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="lesson-actions">
+                <button class="btn btn-secondary" onclick="previousLesson()">← الدرس السابق</button>
+                <button class="btn btn-primary" onclick="completeLesson()">✅ إكمال الدرس والمتابعة →</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .lesson-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .lesson-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .back-btn {
+            color: #fa709a;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .lesson-header {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .lesson-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-section h2 {
+            color: #fa709a;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .vocab-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #fee140;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .vocab-en {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fa709a;
+            margin-bottom: 8px;
+        }
+
+        .vocab-ar {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .vocab-audio {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .dialogue-box {
+            background: #f0f4f8;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .dialogue-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #fa709a;
+        }
+
+        .dialogue-item.speaker2 {
+            border-left-color: #fee140;
+        }
+
+        .speaker-name {
+            font-weight: 600;
+            color: #fa709a;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .dialogue-text {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .dialogue-ar {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .ai-chat-box {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .chat-input-area {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .quiz-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .quiz-question {
+            margin-bottom: 25px;
+        }
+
+        .quiz-question h4 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .quiz-options label {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1px solid #e0e0e0;
+        }
+
+        .quiz-options input {
+            margin-left: 10px;
+        }
+
+        .lesson-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            const responses = document.getElementById('chatResponses');
+            
+            // Add user message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chat-message';
+            userMsg.style.backgroundColor = '#fa709a';
+            userMsg.style.color = 'white';
+            userMsg.style.borderLeft = 'none';
+            userMsg.innerHTML = `<p>${message}</p>`;
+            responses.appendChild(userMsg);
+
+            // Simulate AI response
+            setTimeout(() => {
+                const aiMsg = document.createElement('div');
+                aiMsg.className = 'chat-message';
+                aiMsg.innerHTML = '<p>Great job! That was a good response. Keep practicing! 👏</p>';
+                responses.appendChild(aiMsg);
+            }, 500);
+
+            input.value = '';
+        }
+
+        function completeLesson() {
+            let completed = storage.get('completedLessons') || [];
+            if (!completed.includes('lesson-1-greetings')) {
+                completed.push('lesson-1-greetings');
+                storage.set('completedLessons', completed);
+                showNotification('🎉 مبروك! اكتملت الدرس بنجاح!');
+            }
+            setTimeout(() => {
+                window.location.href = '../../dashboard.html';
+            }, 1500);
+        }
+
+        function previousLesson() {
+            window.location.href = '../../dashboard.html';
+        }
+    </script>
+</body>
+</html>

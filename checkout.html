@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدفع - Learn English Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <div class="checkout-container">
+        <div class="checkout-content">
+            <h1>إكمال الدفع</h1>
+            
+            <div class="checkout-grid">
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>ملخص الطلب</h3>
+                    <div class="summary-item">
+                        <span>خطة <span id="planName">متوسط</span></span>
+                        <span id="planPrice">$14.99</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>المدة</span>
+                        <span>شهر واحد</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-total">
+                        <span>الإجمالي</span>
+                        <span id="totalPrice">$14.99</span>
+                    </div>
+                </div>
+
+                <!-- Payment Form -->
+                <div class="payment-form">
+                    <h3>معلومات الدفع</h3>
+                    
+                    <form id="paymentForm">
+                        <div class="form-group">
+                            <label>الاسم الكامل</label>
+                            <input type="text" id="fullName" placeholder="أدخل اسمك الكامل" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>البريد الإلكتروني</label>
+                            <input type="email" id="email" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>رقم الهاتف</label>
+                            <input type="tel" id="phone" placeholder="+966-50-XXXXX" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>بيانات البطاقة</label>
+                            <div id="card-element" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; background: white;"></div>
+                            <div id="card-errors" style="color: #f44336; margin-top: 10px;"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                            <span>إكمال الدفع</span>
+                            <span id="processingText" style="display: none;">جاري المعالجة...</span>
+                        </button>
+                    </form>
+
+                    <div class="security-info">
+                        <p>🔒 دفعك آمن 100% مع Stripe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .checkout-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fa709a, #fee140);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .checkout-content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .checkout-content h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .order-summary {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        .order-summary h3 {
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .summary-divider {
+            height: 2px;
+            background: #e0e0e0;
+            margin: 15px 0;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fa709a;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .security-info {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            color: #2e7d32;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Get plan from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const plan = urlParams.get('plan') || 'intermediate';
+
+        const plans = {
+            beginner: { name: 'مبتدئ', price: 9.99 },
+            intermediate: { name: 'متوسط', price: 14.99 },
+            advanced: { name: 'متقدم', price: 19.99 }
+        };
+
+        const selectedPlan = plans[plan];
+        document.getElementById('planName').textContent = selectedPlan.name;
+        document.getElementById('planPrice').textContent = '$' + selectedPlan.price;
+        document.getElementById('totalPrice').textContent = '$' + selectedPlan.price;
+
+        // Stripe implementation
+        const stripe = Stripe('pk_test_51234567890'); // Replace with your key
+        const elements = stripe.elements();
+        const cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+
+        cardElement.addEventListener('change', function(event) {
+            const displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        document.getElementById('paymentForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const processingText = document.getElementById('processingText');
+            submitBtn.disabled = true;
+            processingText.style.display = 'inline';
+
+            // Simulate payment processing
+            setTimeout(() => {
+                // Save subscription
+                const subscription = {
+                    plan: plan,
+                    planName: selectedPlan.name,
+                    price: selectedPlan.price,
+                    startDate: new Date().toISOString(),
+                    status: 'active'
+                };
+                storage.set('subscription', subscription);
+                
+                showNotification('تم الدفع بنجاح! تم تفعيل اشتراكك');
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 2000);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
