@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشهادات - Learn English Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
+                <span>Learn English</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li><a href="dashboard.html" class="nav-link btn-primary">لوحة التحكم</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="certificates-page">
+        <div class="container">
+            <h1>🎖️ شهاداتي</h1>
+            <p class="subtitle">هنا الشهادات التي اكتسبتها من خلال الدروس</p>
+
+            <div class="certificates-grid" id="certificatesContainer">
+                <!-- Will be populated by JavaScript -->
+                <div class="no-certificates">
+                    <p>🔍 لم تكرب أي شهادات بعد. ابدأ بإكمال الدروس!</p>
+                    <a href="dashboard.html" class="btn btn-primary">ابدأ التعلم</a>
+                </div>
+            </div>
+
+            <div class="achievements-showcase">
+                <h2>🏆 الإنجازات المتاحة</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-item fade-in">
+                        <div class="achievement-badge">🌟</div>
+                        <h3>المبتدئ الرائع</h3>
+                        <p>أكمل جميع دروس المستوى الأول</p>
+                        <span class="progress">0/5</span>
+                    </div>
+                    <div class="achievement-item fade-in">
+                        <div class="achievement-badge">🔥</div>
+                        <h3>سلسلة لا تنقطع</h3>
+                        <p>تعلم لمدة 7 أيام متتالية</p>
+                        <span class="progress">0/7</span>
+                    </div>
+                    <div class="achievement-item fade-in">
+                        <div class="achievement-badge">💯</div>
+                        <h3>الكمالية 100%</h3>
+                        <p>احصل على 100% في اختبار</p>
+                        <span class="progress">0/5</span>
+                    </div>
+                    <div class="achievement-item fade-in">
+                        <div class="achievement-badge">🎓</div>
+                        <h3>خريج</h3>
+                        <p>أكمل جميع المستويات الثلاثة</p>
+                        <span class="progress">0/15</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certificate-info">
+                <h3>📄 عن الشهادات</h3>
+                <p>عندما تكمل مستوى كاملاً بنجاح، ستحصل على شهادة رسمية يمكنك تحميلها ومشاركتها مع الآخرين.</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .certificates-page {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .certificates-page h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 60px;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .certificate-card {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .certificate-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .certificate-date {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            background: white;
+            color: #fa709a;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .no-certificates {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            background: #f0f4f8;
+            border-radius: 15px;
+        }
+
+        .achievements-showcase {
+            background: #f9f9f9;
+            padding: 60px 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .achievements-showcase h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .achievement-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .achievement-badge {
+            font-size: 60px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .achievement-item h3 {
+            color: #fa709a;
+            margin-bottom: 10px;
+        }
+
+        .achievement-item p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .progress {
+            display: inline-block;
+            background: #fee140;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .certificate-info {
+            background: linear-gradient(135deg, rgba(250, 112, 154, 0.1), rgba(254, 225, 64, 0.1));
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #fa709a;
+        }
+
+        .certificate-info h3 {
+            color: #fa709a;
+            margin-bottom: 15px;
+        }
+
+        .certificate-info p {
+            color: #666;
+            line-height: 1.8;
+        }
+    </style>
+
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const certificates = storage.get('certificates') || [];
+            const container = document.getElementById('certificatesContainer');
+            
+            if (certificates.length > 0) {
+                container.innerHTML = certificates.map(cert => `
+                    <div class="certificate-card fade-in">
+                        <div class="certificate-title">${cert.title}</div>
+                        <div class="certificate-date">${cert.date}</div>
+                        <a href="#" class="download-btn" onclick="downloadCertificate('${cert.id}')">⬇️ تحميل</a>
+                    </div>
+                `).join('');
+            }
+        });
+
+        function downloadCertificate(certId) {
+            showNotification('جاري تحميل الشهادة...');
+        }
+    </script>
+</body>
+</html>

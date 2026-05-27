@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدرس 6: محادثات العمل - Learn English Academy</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <nav class="lesson-nav">
+            <a href="../../dashboard.html" class="back-btn">← العودة</a>
+            <div class="lesson-progress">
+                <div class="progress-bar"><div class="progress-fill" style="width: 20%"></div></div>
+                <span>20% المستوى الثاني</span>
+            </div>
+        </nav>
+
+        <div class="lesson-content">
+            <header class="lesson-header">
+                <h1>💼 الدرس السادس: محادثات العمل</h1>
+                <p>Workplace Conversations</p>
+            </header>
+
+            <section class="lesson-section">
+                <h2>📚 مفردات العمل</h2>
+                <div class="vocabulary-grid">
+                    <div class="vocab-card"><div class="vocab-en">Meeting</div><div class="vocab-ar">اجتماع</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Project</div><div class="vocab-ar">مشروع</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Deadline</div><div class="vocab-ar">آخر موعد</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Team</div><div class="vocab-ar">فريق</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Client</div><div class="vocab-ar">عميل</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Budget</div><div class="vocab-ar">ميزانية</div></div>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>💬 حوار العمل</h2>
+                <div class="dialogue-box">
+                    <div class="dialogue-item speaker1">
+                        <div class="speaker-name">Boss: Can you finish the project by Friday?</div>
+                        <div class="dialogue-ar">هل يمكنك إنهاء المشروع بحلول الجمعة؟</div>
+                    </div>
+                    <div class="dialogue-item speaker2">
+                        <div class="speaker-name">Employee: Yes, I will work on it immediately</div>
+                        <div class="dialogue-ar">نعم، سأبدأ العمل عليه على الفور</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="lesson-actions">
+                <button class="btn btn-secondary" onclick="previousLesson()">← السابق</button>
+                <button class="btn btn-primary" onclick="completeLesson()">✅ المتابعة →</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .lesson-container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .lesson-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding: 20px; background: white; border-radius: 10px; }
+        .back-btn { color: #fa709a; text-decoration: none; font-weight: 600; }
+        .lesson-header { background: linear-gradient(135deg, #fa709a, #fee140); color: white; padding: 40px; border-radius: 15px; text-align: center; margin-bottom: 40px; }
+        .lesson-section { background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+        .vocabulary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+        .vocab-card { background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center; border: 2px solid #fee140; }
+        .dialogue-box { background: #f0f4f8; padding: 25px; border-radius: 10px; }
+        .dialogue-item { background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #fa709a; }
+        .lesson-actions { display: flex; justify-content: space-between; gap: 15px; margin-top: 40px; }
+    </style>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+        function completeLesson() { showNotification('مبروك!'); setTimeout(() => { window.location.href = '../../dashboard.html'; }, 1500); }
+        function previousLesson() { window.location.href = '../../dashboard.html'; }
+    </script>
+</body>
+</html>

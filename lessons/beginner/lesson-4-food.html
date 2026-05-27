@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدرس 4: الطعام والشراب - Learn English Academy</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <nav class="lesson-nav">
+            <a href="../../dashboard.html" class="back-btn">← العودة</a>
+            <div class="lesson-progress">
+                <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+                <span>60% اكتمل</span>
+            </div>
+        </nav>
+
+        <div class="lesson-content">
+            <header class="lesson-header">
+                <h1>🍴 الدرس الرابع: الطعام والشراب</h1>
+                <p>Food & Drinks</p>
+            </header>
+
+            <section class="lesson-section">
+                <h2>🍟 المفردات - الطعام</h2>
+                <div class="vocabulary-grid">
+                    <div class="vocab-card"><div class="vocab-en">Apple</div><div class="vocab-ar">تفاحة</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Bread</div><div class="vocab-ar">خبز</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Cheese</div><div class="vocab-ar">جبن</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Chicken</div><div class="vocab-ar">دجاج</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Rice</div><div class="vocab-ar">أرز</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Fish</div><div class="vocab-ar">سمك</div></div>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>🥤 المفردات - المشروبات</h2>
+                <div class="vocabulary-grid">
+                    <div class="vocab-card"><div class="vocab-en">Water</div><div class="vocab-ar">ماء</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Coffee</div><div class="vocab-ar">قهوة</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Tea</div><div class="vocab-ar">شاي</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Milk</div><div class="vocab-ar">حليب</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Juice</div><div class="vocab-ar">عصير</div></div>
+                    <div class="vocab-card"><div class="vocab-en">Soda</div><div class="vocab-ar">مشروب غازي</div></div>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>💬 محادثة بالمطعم</h2>
+                <div class="dialogue-box">
+                    <div class="dialogue-item speaker1">
+                        <div class="speaker-name">A: What would you like?</div>
+                        <div class="dialogue-ar">ماذا تريد؟</div>
+                    </div>
+                    <div class="dialogue-item speaker2">
+                        <div class="speaker-name">B: I would like chicken and juice</div>
+                        <div class="dialogue-ar">أريد دجاجاً وعصيراً</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="lesson-actions">
+                <button class="btn btn-secondary" onclick="previousLesson()">← السابق</button>
+                <button class="btn btn-primary" onclick="completeLesson()">✅ إكمال الدرس →</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .lesson-container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .lesson-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+        .back-btn { color: #fa709a; text-decoration: none; font-weight: 600; cursor: pointer; }
+        .lesson-header { background: linear-gradient(135deg, #fa709a, #fee140); color: white; padding: 40px; border-radius: 15px; text-align: center; margin-bottom: 40px; }
+        .lesson-section { background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+        .lesson-section h2 { color: #fa709a; margin-bottom: 25px; }
+        .vocabulary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+        .vocab-card { background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center; border: 2px solid #fee140; }
+        .dialogue-box { background: #f0f4f8; padding: 25px; border-radius: 10px; }
+        .dialogue-item { background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #fa709a; }
+        .speaker-name { font-weight: 600; color: #fa709a; margin-bottom: 8px; }
+        .dialogue-ar { color: #666; font-size: 14px; }
+        .lesson-actions { display: flex; justify-content: space-between; gap: 15px; margin-top: 40px; }
+    </style>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+        function completeLesson() { showNotification('مبروك!'); setTimeout(() => { window.location.href = '../../dashboard.html'; }, 1500); }
+        function previousLesson() { window.location.href = 'lesson-3-numbers.html'; }
+    </script>
+</body>
+</html>
